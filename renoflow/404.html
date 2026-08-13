@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page introuvable — RenoFlow</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--brand:#1e3d5c;--accent:#d4773a;--paper:#f6f4ef;--muted:#5a6870;--ink:#181e28}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:"Figtree",system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces";font-size:20px;font-weight:500;color:var(--brand);margin-bottom:48px;text-decoration:none}
+.brand-mark{width:28px;height:28px;border-radius:7px;background:var(--brand);position:relative;flex:0 0 auto}
+.brand-mark::before{content:"";position:absolute;top:8px;left:6px;right:6px;height:3px;background:var(--accent);border-radius:2px}
+.brand-mark::after{content:"";position:absolute;bottom:7px;left:6px;right:10px;height:3px;background:rgba(255,255,255,.28);border-radius:2px}
+.code{font-family:"Fraunces";font-size:clamp(80px,18vw,140px);font-weight:300;color:var(--brand);line-height:1;opacity:.15;margin-bottom:-16px}
+h1{font-family:"Fraunces";font-size:clamp(26px,5vw,40px);font-weight:500;color:var(--ink);margin-bottom:14px}
+p{color:var(--muted);font-size:17px;max-width:38ch;margin:0 auto 32px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;padding:12px 26px;border-radius:11px;font-size:15px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(180,90,30,.45)}
+.btn.ghost{background:transparent;color:var(--brand);border:1.5px solid rgba(30,61,92,.2);margin-left:10px}
+.btn.ghost:hover{background:rgba(30,61,92,.06);box-shadow:none;transform:none}
+</style>
+</head>
+<body>
+<a class="brand" href="/"><div class="brand-mark"></div>RenoFlow</a>
+<div class="code">404</div>
+<h1>Cette page n'existe pas</h1>
+<p>Le lien est peut-être brisé, ou la page a été déplacée. Retournez à l'accueil pour continuer.</p>
+<div>
+  <a class="btn" href="/">Retour à l'accueil</a>
+  <a class="btn ghost" href="#" onclick="history.back();return false">← Retour</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WizflowAI — Automatisation IA pour PME canadiennes</title>
+<meta name="description" content="CRM, workflows et agents IA vocaux 24/7 pour PME canadiennes. Setup en 48 h. Données hébergées au Canada. Conformité Loi 25 / PIPEDA. Consultation stratégique gratuite.">
+<meta property="og:title" content="WizflowAI — Automatisation IA pour PME canadiennes">
+<meta property="og:description" content="CRM, workflows et agents IA vocaux 24/7 pour PME canadiennes. Setup en 48 h. Consultation stratégique gratuite.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060c1a;
+  --bg2:#0d1528;
+  --bg3:#111d35;
+  --blue:#2563eb;
+  --blue-l:#3b82f6;
+  --blue-xl:#60a5fa;
+  --purple:#7c3aed;
+  --purple-l:#a78bfa;
+  --cyan:#06b6d4;
+  --cyan-l:#67e8f9;
+  --green:#10b981;
+  --ink:#f0f4ff;
+  --muted:#8ba3c7;
+  --line:rgba(255,255,255,.08);
+  --line2:rgba(255,255,255,.12);
+  --glass:rgba(13,21,40,.72);
+  --glass2:rgba(37,99,235,.12);
+  --shadow:0 0 0 1px rgba(255,255,255,.06),0 24px 64px -12px rgba(0,0,0,.72);
+  --r:16px;
+  --grad:linear-gradient(135deg,var(--blue) 0%,var(--purple) 60%,var(--cyan) 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-weight:700;line-height:1.1;letter-spacing:-.02em}
+.mono{font-family:"JetBrains Mono",monospace;font-size:.85em}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-xl);font-weight:500}
+.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* NAV */
+header{position:sticky;top:0;z-index:90;background:rgba(6,12,26,.84);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:800;letter-spacing:-.03em}
+.brand-icon{width:34px;height:34px;border-radius:9px;background:var(--grad);display:grid;place-items:center;font-size:17px;flex:0 0 auto;box-shadow:0 0 20px rgba(37,99,235,.5)}
+.brand span.dim{color:var(--muted);font-weight:500}
+.navlinks{display:flex;gap:24px;align-items:center;font-size:14.5px;color:var(--muted);font-weight:500}
+.navlinks a:hover{color:var(--ink);transition:color .15s}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--grad);color:#fff;font-weight:700;padding:11px 22px;border-radius:40px;font-size:14.5px;border:none;cursor:pointer;transition:opacity .15s,transform .15s,box-shadow .15s;font-family:inherit;white-space:nowrap}
+.btn:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 12px 32px -8px rgba(37,99,235,.55)}
+.btn.ghost{background:transparent;border:1.5px solid var(--line2);color:var(--muted);font-weight:600}
+.btn.ghost:hover{border-color:var(--blue-l);color:var(--blue-xl);box-shadow:none;opacity:1;transform:none}
+.btn.outline-green{background:transparent;border:1.5px solid rgba(16,185,129,.4);color:var(--green);font-weight:600}
+.btn.outline-green:hover{border-color:var(--green);box-shadow:0 0 20px rgba(16,185,129,.2);opacity:1;transform:none}
+@media(max-width:860px){.navlinks a:not(.btn){display:none}}
+
+/* HERO */
+.hero{padding:88px 0 60px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(37,99,235,.22),transparent),radial-gradient(ellipse 50% 40% at 80% 50%,rgba(124,58,237,.14),transparent);pointer-events:none}
+.pill{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;background:var(--glass2);border:1px solid rgba(37,99,235,.3);border-radius:30px;font-size:13px;color:var(--blue-xl);font-weight:600;margin-bottom:26px}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(34px,5vw,64px);max-width:18ch;margin-bottom:22px}
+.hero p.lead{font-size:clamp(17px,2.2vw,21px);color:var(--muted);max-width:44ch;margin-bottom:34px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.kpis{display:flex;gap:32px;flex-wrap:wrap;margin-top:36px}
+.kpi{display:flex;flex-direction:column}
+.kpi .val{font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.kpi .val span{font-size:13px;font-weight:500;color:var(--muted);vertical-align:super}
+.kpi .lbl{font-size:12.5px;color:var(--muted);margin-top:3px;font-weight:500}
+.kpi-sep{width:1px;background:var(--line2)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero-visual{position:relative}
+.dash-mock{background:var(--bg2);border:1px solid var(--line2);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
+.dash-top{display:flex;align-items:center;gap:8px;margin-bottom:18px}
+.dash-top .dot{width:10px;height:10px;border-radius:50%}
+.dash-top .dot.r{background:#ff5f57}.dash-top .dot.y{background:#ffbd2e}.dash-top .dot.g{background:#28c840}
+.dash-stat-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+.dash-stat{background:var(--bg3);border:1px solid var(--line);border-radius:12px;padding:14px}
+.dash-stat .s-val{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1;margin-bottom:3px}
+.dash-stat .s-lbl{font-size:11px;color:var(--muted);font-weight:500}
+.dash-bar-wrap{background:var(--bg3);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.dash-bar-lbl{font-size:11.5px;color:var(--muted);font-weight:500;margin-bottom:10px}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:12px}
+.bar-row:last-child{margin-bottom:0}
+.bar-bg{flex:1;height:6px;background:var(--bg);border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px;background:var(--grad)}
+.bar-pct{color:var(--muted);min-width:28px;text-align:right;font-family:"JetBrains Mono"}
+.dash-badge{position:absolute;top:-14px;right:-14px;background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.35);border-radius:14px;padding:12px 16px;backdrop-filter:blur(8px)}
+.dash-badge .b-lbl{font-size:10.5px;color:var(--cyan-l);font-family:"JetBrains Mono";letter-spacing:.1em;text-transform:uppercase}
+.dash-badge .b-val{font-size:19px;font-weight:800;color:var(--ink);line-height:1.1;margin-top:2px}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+
+/* TRUST BAR */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.trust .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:16px 28px}
+.trust-item{font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:8px;font-weight:500}
+.trust-item .ic{font-size:15px}
+.trust-item b{color:var(--ink)}
+
+/* SECTIONS */
+section.blk{padding:96px 0}
+.shead{max-width:680px;margin-bottom:52px}
+.shead h2{font-size:clamp(30px,4vw,48px);margin-top:10px}
+.shead p{color:var(--muted);margin-top:14px;font-size:18px}
+.shead.center{text-align:center;margin-left:auto;margin-right:auto}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* SERVICES GRID */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:30px;position:relative;transition:border-color .2s,transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.svc-card:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 20px 48px -16px rgba(37,99,235,.3)}
+.svc-card.featured{border-color:rgba(37,99,235,.5);background:linear-gradient(160deg,rgba(37,99,235,.1),var(--bg2))}
+.svc-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;white-space:nowrap}
+.svc-icon{font-size:32px;margin-bottom:16px}
+.svc-card h3{font-size:20px;margin-bottom:10px}
+.svc-card .desc{color:var(--muted);font-size:14.5px;margin-bottom:18px}
+.svc-list{list-style:none;flex:1}
+.svc-list li{font-size:14px;color:var(--muted);padding:5px 0;display:flex;align-items:center;gap:9px}
+.svc-list li::before{content:"→";color:var(--blue-xl);font-weight:700;flex:0 0 auto}
+@media(max-width:860px){.services-grid{grid-template-columns:1fr}}
+
+/* SOLUTIONS */
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sol-card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:border-color .2s,transform .2s}
+.sol-card:hover{border-color:rgba(124,58,237,.5);transform:translateY(-3px)}
+.sol-card.hot{border-color:rgba(37,99,235,.4);background:linear-gradient(160deg,rgba(37,99,235,.08),var(--bg2));position:relative}
+.sol-tag{display:inline-block;background:var(--grad);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;margin-bottom:12px}
+.sol-card h3{font-size:18px;margin-bottom:12px;color:var(--blue-xl)}
+.sol-list{list-style:none}
+.sol-list li{font-size:13.5px;color:var(--muted);padding:4px 0;display:flex;align-items:center;gap:8px}
+.sol-list li::before{content:"✦";color:var(--purple-l);font-size:9px;flex:0 0 auto}
+@media(max-width:860px){.sol-grid{grid-template-columns:1fr}}
+
+/* ECOSYSTEM */
+.eco-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.eco-card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center;transition:border-color .2s,background .2s}
+.eco-card:hover{border-color:var(--blue);background:var(--glass2)}
+.eco-card .eco-ic{font-size:26px;margin-bottom:10px}
+.eco-card h4{font-size:14px;font-weight:700;color:var(--blue-xl);margin-bottom:4px}
+.eco-card p{font-size:12px;color:var(--muted)}
+@media(max-width:800px){.eco-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.eco-grid{grid-template-columns:1fr}}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat-card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .2s}
+.feat-card:hover{border-color:var(--line2)}
+.feat-icon{width:44px;height:44px;border-radius:12px;background:var(--glass2);border:1px solid rgba(37,99,235,.25);display:grid;place-items:center;font-size:20px;margin-bottom:15px}
+.feat-card h3{font-size:16.5px;margin-bottom:8px}
+.feat-card p{font-size:14px;color:var(--muted)}
+@media(max-width:860px){.feat-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.feat-grid{grid-template-columns:1fr}}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.skill-item{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center;transition:border-color .2s}
+.skill-item:hover{border-color:var(--purple)}
+.skill-item .sk-ic{font-size:22px;margin-bottom:7px}
+.skill-item .sk-lbl{font-size:12.5px;font-weight:600;color:var(--muted)}
+@media(max-width:800px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.process-steps::before{content:"";position:absolute;top:30px;left:calc(12.5% + 20px);right:calc(12.5% + 20px);height:1px;background:linear-gradient(90deg,var(--blue),var(--purple));z-index:0}
+.p-step{text-align:center;position:relative;z-index:1}
+.p-num{width:60px;height:60px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin:0 auto 16px;box-shadow:0 0 24px rgba(37,99,235,.4)}
+.p-step h4{font-size:15px;font-weight:700;margin-bottom:7px}
+.p-step p{font-size:13px;color:var(--muted)}
+@media(max-width:760px){.process-steps{grid-template-columns:repeat(2,1fr)}.process-steps::before{display:none}}
+@media(max-width:460px){.process-steps{grid-template-columns:1fr}}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.price-card{background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:34px 28px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s,box-shadow .2s;position:relative}
+.price-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px -16px rgba(37,99,235,.25)}
+.price-card.pop{border-color:rgba(37,99,235,.6);background:linear-gradient(160deg,rgba(37,99,235,.12),var(--bg2))}
+.price-pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:12px;font-weight:700;padding:4px 16px;border-radius:20px;white-space:nowrap}
+.price-name{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:12px}
+.price-amount{font-size:42px;font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:4px}
+.price-amount sup{font-size:20px;vertical-align:super;font-weight:700}
+.price-amount sub{font-size:16px;font-weight:500;color:var(--muted)}
+.price-setup{font-size:12.5px;color:var(--muted);margin-bottom:22px}
+.price-divider{height:1px;background:var(--line);margin:20px 0}
+.price-list{list-style:none;flex:1;margin-bottom:26px}
+.price-list li{font-size:14px;color:var(--muted);padding:6px 0;display:flex;align-items:flex-start;gap:10px}
+.price-list li .check{color:var(--green);font-weight:800;flex:0 0 auto;margin-top:1px}
+.price-list li .x{color:#ef4444;font-weight:800;flex:0 0 auto;margin-top:1px}
+.price-note{font-size:12px;color:var(--muted);text-align:center;margin-top:auto;padding-top:14px}
+@media(max-width:860px){.pricing-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+
+/* ROI CALCULATOR */
+.roi-box{background:var(--bg2);border:1px solid var(--line2);border-radius:22px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.roi-inputs{display:flex;flex-direction:column;gap:20px}
+.roi-field label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px}
+.roi-field input[type=range]{width:100%;accent-color:var(--blue);height:4px;cursor:pointer}
+.roi-field .range-val{font-size:18px;font-weight:700;color:var(--blue-xl);margin-top:4px;font-family:"JetBrains Mono"}
+.roi-results{background:var(--bg3);border:1px solid var(--line);border-radius:18px;padding:28px}
+.roi-results h3{font-size:18px;margin-bottom:20px;color:var(--ink)}
+.roi-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.roi-row:last-child{border-bottom:none}
+.roi-row .roi-lbl{font-size:13.5px;color:var(--muted)}
+.roi-row .roi-val{font-size:16px;font-weight:700;color:var(--blue-xl);font-family:"JetBrains Mono"}
+.roi-highlight{margin-top:18px;background:linear-gradient(135deg,rgba(37,99,235,.15),rgba(124,58,237,.1));border:1px solid rgba(37,99,235,.3);border-radius:14px;padding:16px;text-align:center}
+.roi-highlight .rh-lbl{font-size:12px;color:var(--muted);margin-bottom:4px}
+.roi-highlight .rh-val{font-size:30px;font-weight:800;letter-spacing:-.02em}
+@media(max-width:760px){.roi-box{grid-template-columns:1fr;gap:24px}}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi-card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:16px;transition:border-color .2s}
+.testi-card:hover{border-color:var(--line2)}
+.testi-stars{color:#fbbf24;font-size:14px;letter-spacing:2px}
+.testi-text{font-size:15px;color:var(--muted);line-height:1.65;flex:1}
+.testi-author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
+.testi-avatar{width:42px;height:42px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-size:17px;flex:0 0 auto}
+.testi-name{font-size:14.5px;font-weight:700;color:var(--ink)}
+.testi-role{font-size:12.5px;color:var(--muted)}
+@media(max-width:860px){.testi-grid{grid-template-columns:1fr}}
+
+/* ENGAGE */
+.engage-box{background:var(--bg2);border:1px solid var(--line2);border-radius:22px;padding:40px 36px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.engage-box .list-check{list-style:none}
+.engage-box .list-check li{display:flex;align-items:flex-start;gap:12px;padding:8px 0;font-size:15px;color:var(--muted);border-bottom:1px solid var(--line)}
+.engage-box .list-check li:last-child{border-bottom:none}
+.engage-box .list-check li::before{content:"✓";color:var(--cyan);font-weight:800;flex:0 0 16px;margin-top:1px}
+@media(max-width:760px){.engage-box{grid-template-columns:1fr;gap:24px}}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px;max-width:820px;margin:0 auto}
+.faq-item{background:var(--bg2);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:var(--blue)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-size:16px;font-weight:600;user-select:none;gap:16px}
+.faq-q:hover{color:var(--blue-xl)}
+.faq-arr{font-size:18px;color:var(--muted);transition:transform .25s;flex:0 0 auto}
+.faq-item.open .faq-arr{transform:rotate(180deg);color:var(--blue-xl)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{padding:0 24px 20px;font-size:15px;color:var(--muted);line-height:1.7}
+
+/* CTA SECTION */
+.cta-section{padding:100px 0;position:relative;overflow:hidden}
+.cta-section::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(37,99,235,.18),transparent),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(124,58,237,.12),transparent);pointer-events:none}
+.cta-box{text-align:center;position:relative;z-index:1}
+.cta-box h2{font-size:clamp(30px,5vw,52px);margin-bottom:16px}
+.cta-box p{color:var(--muted);font-size:18px;margin-bottom:34px;max-width:46ch;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--line)}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding:60px 0 44px}
+.foot-brand{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.foot-brand .fic{width:30px;height:30px;border-radius:8px;background:var(--grad);display:grid;place-items:center;font-size:15px}
+footer p.sub{font-size:14px;color:var(--muted);max-width:28ch;line-height:1.6}
+footer h5{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:14px;letter-spacing:.04em;text-transform:uppercase}
+footer ul{list-style:none}
+footer ul li{margin-bottom:10px}
+footer ul li a{font-size:14px;color:var(--muted);transition:color .15s}
+footer ul li a:hover{color:var(--blue-xl)}
+.foot-bottom{border-top:1px solid var(--line);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-bottom p{font-size:13px;color:var(--muted)}
+.foot-badges{display:flex;gap:12px;flex-wrap:wrap}
+.fbadge{font-size:12px;color:var(--muted);background:var(--bg3);border:1px solid var(--line);border-radius:8px;padding:4px 10px}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:540px){.foot-grid{grid-template-columns:1fr}}
+
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-bg.open{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--line2);border-radius:24px;max-width:620px;width:100%;max-height:92vh;overflow-y:auto;padding:40px;position:relative}
+.modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--bg3);border:1px solid var(--line);cursor:pointer;display:grid;place-items:center;color:var(--muted);font-size:18px;transition:background .15s}
+.modal-close:hover{background:var(--glass2)}
+.modal h2{font-size:26px;margin-bottom:6px}
+.modal .sub{font-size:14.5px;color:var(--muted);margin-bottom:28px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:600;margin-bottom:7px;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;background:var(--bg3);border:1px solid var(--line2);border-radius:10px;padding:12px 14px;color:var(--ink);font-family:inherit;font-size:14.5px;outline:none;transition:border-color .15s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue)}
+.field select option{background:var(--bg2)}
+.field textarea{resize:vertical;min-height:90px}
+.form-note{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+
+/* UTIL */
+.mt-4{margin-top:16px}.mt-6{margin-top:24px}.mt-8{margin-top:32px}.mt-10{margin-top:40px}
+.mb-4{margin-bottom:16px}
+.text-muted{color:var(--muted)}
+.text-sm{font-size:14px}
+.flex{display:flex}.gap-3{gap:12px}.items-center{align-items:center}.flex-wrap{flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#" class="brand">
+        <div class="brand-icon">⚡</div>
+        Wizflow<span class="dim">AI</span>
+      </a>
+      <div class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#solutions">Secteurs</a>
+        <a href="#tarification">Forfaits</a>
+        <a href="#plateforme">Plateforme</a>
+        <a href="#faq">FAQ</a>
+        <button class="btn" onclick="openModal()">Consultation gratuite</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="reveal">
+        <div class="pill">
+          <span class="dot"></span>
+          Plateforme d'automatisation IA · PME canadiennes
+        </div>
+        <h1>
+          Automatisez ce qui vous ralentit.<br>
+          <span class="grad-text">Concentrez-vous sur ce qui rapporte.</span>
+        </h1>
+        <p class="lead">CRM, workflows et agents IA vocaux 24/7 — conçus pour les PME québécoises et canadiennes. Setup en 48 h. Données hébergées au Canada.</p>
+        <div class="hero-cta">
+          <button class="btn" onclick="openModal()">Consultation stratégique gratuite →</button>
+          <a href="#tarification" class="btn ghost">Voir nos forfaits</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi">
+            <div class="val">48<span>h</span></div>
+            <div class="lbl">Setup garanti</div>
+          </div>
+          <div class="kpi-sep"></div>
+          <div class="kpi">
+            <div class="val">24<span>/7</span></div>
+            <div class="lbl">Agents vocaux actifs</div>
+          </div>
+          <div class="kpi-sep"></div>
+          <div class="kpi">
+            <div class="val">150<span>+</span></div>
+            <div class="lbl">Intégrations natives</div>
+          </div>
+          <div class="kpi-sep"></div>
+          <div class="kpi">
+            <div class="val">100<span>%</span></div>
+            <div class="lbl">Données Canada</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="dash-mock">
+          <div class="dash-top">
+            <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+            <span class="mono text-muted" style="font-size:11px;margin-left:6px">wizflowai · tableau de bord</span>
+          </div>
+          <div class="dash-stat-row">
+            <div class="dash-stat">
+              <div class="s-val grad-text">183</div>
+              <div class="s-lbl">Leads ce mois</div>
+            </div>
+            <div class="dash-stat">
+              <div class="s-val" style="color:var(--cyan)">98.7%</div>
+              <div class="s-lbl">Taux de réponse</div>
+            </div>
+            <div class="dash-stat">
+              <div class="s-val" style="color:var(--purple-l)">2.4 h</div>
+              <div class="s-lbl">Temps sauvé / jr</div>
+            </div>
+          </div>
+          <div class="dash-bar-wrap">
+            <div class="dash-bar-lbl">Automatisations actives</div>
+            <div class="bar-row">
+              <span style="font-size:11.5px;color:var(--muted);min-width:90px">Agent vocal</span>
+              <div class="bar-bg"><div class="bar-fill" style="width:91%"></div></div>
+              <span class="bar-pct">91%</span>
+            </div>
+            <div class="bar-row">
+              <span style="font-size:11.5px;color:var(--muted);min-width:90px">Suivi CRM</span>
+              <div class="bar-bg"><div class="bar-fill" style="width:78%"></div></div>
+              <span class="bar-pct">78%</span>
+            </div>
+            <div class="bar-row">
+              <span style="font-size:11.5px;color:var(--muted);min-width:90px">Relances auto</span>
+              <div class="bar-bg"><div class="bar-fill" style="width:65%"></div></div>
+              <span class="bar-pct">65%</span>
+            </div>
+          </div>
+        </div>
+        <div class="dash-badge">
+          <div class="b-lbl">Shelby IA · En ligne</div>
+          <div class="b-val">3 appels actifs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust">
+  <div class="wrap">
+    <span class="trust-item"><span class="ic">🇨🇦</span> <b>Entreprise canadienne</b></span>
+    <span class="trust-item"><span class="ic">🔒</span> <b>Conformité Loi 25 / PIPEDA</b></span>
+    <span class="trust-item"><span class="ic">🛡️</span> <b>Données hébergées au Canada</b></span>
+    <span class="trust-item"><span class="ic">🎙️</span> <b>Agent vocal 24/7</b></span>
+    <span class="trust-item"><span class="ic">⚡</span> <b>Setup en 48 h</b></span>
+    <span class="trust-item"><span class="ic">📋</span> <b>Devis 100 % personnalisé</b></span>
+  </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section class="blk" id="services">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow">Nos services</div>
+      <h2>Trois façons de travailler ensemble</h2>
+      <p>Pas de forfait générique. Chaque mandat est bâti sur votre réalité et votre ROI attendu. Transparence totale du premier appel à la livraison.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon">🎯</div>
+        <h3>Diagnostic &amp; stratégie IA</h3>
+        <p class="desc">Audit complet de vos processus, identification des goulots, feuille de route d'automatisation priorisée par ROI.</p>
+        <ul class="svc-list">
+          <li>Cartographie de vos processus actuels</li>
+          <li>Identification des quick wins</li>
+          <li>Business case chiffré</li>
+          <li>Feuille de route 3–12 mois</li>
+        </ul>
+      </div>
+      <div class="svc-card featured reveal">
+        <div class="svc-badge">Le plus demandé</div>
+        <div class="svc-icon">🤖</div>
+        <h3>Implantation clé en main</h3>
+        <p class="desc">De l'automatisation ciblée à la refonte complète de vos opérations — CRM, workflows, téléphonie, e-commerce.</p>
+        <ul class="svc-list">
+          <li>CRM sur mesure</li>
+          <li>Workflows automatisés</li>
+          <li>Agents IA voix + texte + SMS</li>
+          <li>Téléphonie intégrée (SIP)</li>
+          <li>E-commerce + paiements intégrés</li>
+          <li>Formation et transfert de connaissances</li>
+        </ul>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">🚀</div>
+        <h3>Gestion &amp; optimisation continue</h3>
+        <p class="desc">Maintenance évolutive, formation, veille technologique — on reste à vos côtés pour tirer le maximum.</p>
+        <ul class="svc-list">
+          <li>Support technique 24/7</li>
+          <li>Améliorations et nouveaux workflows</li>
+          <li>Coaching équipe</li>
+          <li>Revue trimestrielle stratégique</li>
+          <li>Veille IA appliquée à votre secteur</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 reveal" style="background:var(--bg2);border:1px solid var(--line2);border-radius:18px;padding:30px 32px;text-align:center">
+      <p style="font-size:16px;color:var(--muted);max-width:56ch;margin:0 auto 18px">Notre engagement : nous ne facturons jamais un forfait générique. Chaque devis reflète exactement le travail à réaliser et le ROI attendu.</p>
+      <button class="btn" onclick="openModal()">Obtenir un devis personnalisé →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTIONS ===== -->
+<section class="blk" id="solutions" style="background:var(--bg2);padding:96px 0">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <div class="eyebrow">Secteurs</div>
+      <h2>Solutions par industrie</h2>
+      <p>Automatisations sur mesure bâties pour les réalités de votre secteur.</p>
+    </div>
+    <div class="sol-grid">
+      <div class="sol-card reveal">
+        <h3>Courtage immobilier</h3>
+        <ul class="sol-list">
+          <li>CRM clients et propriétés</li>
+          <li>Intégration Centris / MLS</li>
+          <li>Suivi des visites automatisé</li>
+          <li>Marketing personnalisé par segment</li>
+          <li>Génération et qualification de leads</li>
+        </ul>
+      </div>
+      <div class="sol-card hot reveal">
+        <div class="sol-tag">Populaire</div>
+        <h3>Construction &amp; rénovation</h3>
+        <ul class="sol-list">
+          <li>Gestion projets et chantiers</li>
+          <li>Soumissions automatisées</li>
+          <li>Facturation RBQ conforme</li>
+          <li>Suivi temps / matériaux</li>
+          <li>Planning et coordination d'équipes</li>
+        </ul>
+      </div>
+      <div class="sol-card reveal">
+        <h3>Salons &amp; spas / Bien-être</h3>
+        <ul class="sol-list">
+          <li>Prise de RDV automatisée 24/7</li>
+          <li>Relances et fidélisation clients</li>
+          <li>Gestion des thérapeutes et salles</li>
+          <li>Paiements intégrés</li>
+          <li>Marketing par SMS et courriel</li>
+        </ul>
+      </div>
+      <div class="sol-card reveal">
+        <h3>Finance &amp; comptabilité</h3>
+        <ul class="sol-list">
+          <li>Onboarding client automatisé</li>
+          <li>Collecte de documents sécurisée</li>
+          <li>Facturation et rappels automatiques</li>
+          <li>Rapports financiers en temps réel</li>
+          <li>Conformité TPS/TVQ simplifiée</li>
+        </ul>
+      </div>
+      <div class="sol-card reveal">
+        <h3>PME &amp; startups</h3>
+        <ul class="sol-list">
+          <li>CRM complet + gestion des ventes</li>
+          <li>Comptabilité TPS / TVQ</li>
+          <li>Paie automatisée</li>
+          <li>Marketing automation multi-canal</li>
+          <li>Reporting en temps réel</li>
+        </ul>
+      </div>
+      <div class="sol-card reveal">
+        <h3>Recrutement &amp; RH</h3>
+        <ul class="sol-list">
+          <li>ATS candidats et postes ouverts</li>
+          <li>Présélection automatisée par IA</li>
+          <li>Portail employeurs et candidats</li>
+          <li>Contrats et onboarding numériques</li>
+          <li>Suivi des mandats de placement</li>
+        </ul>
+      </div>
+    </div>
+    <p class="reveal mt-8 text-sm text-muted" style="text-align:center">Votre secteur n'est pas listé ? <button onclick="openModal()" style="background:none;border:none;color:var(--blue-xl);cursor:pointer;font-family:inherit;font-size:inherit;font-weight:600;padding:0">Contactez-nous</button> — nous nous adaptons.</p>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="blk" id="processus">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <div class="eyebrow">Comment ça marche</div>
+      <h2>De zéro à automatisé en 4 étapes</h2>
+      <p>Un processus clair, sans surprise. Votre premier résultat concret en moins de 48 heures.</p>
+    </div>
+    <div class="process-steps reveal">
+      <div class="p-step">
+        <div class="p-num">1</div>
+        <h4>Consultation gratuite</h4>
+        <p>30 min pour comprendre vos processus et identifier les opportunités à fort ROI.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-num">2</div>
+        <h4>Diagnostic &amp; devis</h4>
+        <p>Feuille de route personnalisée avec business case chiffré. Aucun engagement.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-num">3</div>
+        <h4>Implantation en 48 h</h4>
+        <p>Déploiement rapide, formation de votre équipe, mise en production.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-num">4</div>
+        <h4>Optimisation continue</h4>
+        <p>Support 24/7, améliorations régulières, revues stratégiques trimestrielles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TARIFICATION ===== -->
+<section class="blk" id="tarification" style="background:var(--bg2);padding:96px 0">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <div class="eyebrow">Forfaits</div>
+      <h2>Trois formules, un devis fait pour vous</h2>
+      <p>Chaque mandat est bâti sur votre réalité et votre ROI attendu. On établit ensemble le forfait qui convient — devis clair, sans engagement.</p>
+    </div>
+    <div class="pricing-grid reveal">
+      <!-- Essentiel -->
+      <div class="price-card">
+        <div class="price-name">Essentiel</div>
+        <div class="price-amount" style="font-size:32px;margin-top:5px">Sur devis</div>
+        <div class="price-setup">Forfait mensuel adapté à votre réalité</div>
+        <p style="font-size:13.5px;color:var(--muted);margin-bottom:0">Pour les solopreneurs et très petites équipes qui veulent démarrer avec l'IA sans se noyer.</p>
+        <div class="price-divider"></div>
+        <ul class="price-list">
+          <li><span class="check">✓</span> CRM de base (jusqu'à 500 contacts)</li>
+          <li><span class="check">✓</span> 1 agent IA vocal ou texte</li>
+          <li><span class="check">✓</span> 3 workflows automatisés</li>
+          <li><span class="check">✓</span> Intégrations courriel + calendrier</li>
+          <li><span class="check">✓</span> Support 5j/7 (réponse sous 24 h)</li>
+          <li><span class="check">✓</span> Formation initiale (2 h)</li>
+          <li><span class="x">✗</span> Agent vocal multi-lignes</li>
+          <li><span class="x">✗</span> Analytics avancés</li>
+          <li><span class="x">✗</span> Revue stratégique trimestrielle</li>
+        </ul>
+        <button class="btn ghost" onclick="openModal()" style="width:100%;justify-content:center">Démarrer →</button>
+        <p class="price-note">Sans engagement · Annulation 30 jours</p>
+      </div>
+      <!-- Croissance -->
+      <div class="price-card pop">
+        <div class="price-pop-badge">✦ Le plus populaire</div>
+        <div class="price-name">Croissance</div>
+        <div class="price-amount" style="font-size:32px;margin-top:5px">Sur devis</div>
+        <div class="price-setup">Forfait mensuel adapté à votre croissance</div>
+        <p style="font-size:13.5px;color:var(--muted);margin-bottom:0">Pour les PME en croissance qui veulent automatiser sérieusement sans embaucher une équipe IT.</p>
+        <div class="price-divider"></div>
+        <ul class="price-list">
+          <li><span class="check">✓</span> CRM avancé (contacts illimités)</li>
+          <li><span class="check">✓</span> 3 agents IA (voix + texte + SMS)</li>
+          <li><span class="check">✓</span> Workflows illimités</li>
+          <li><span class="check">✓</span> Téléphonie intégrée</li>
+          <li><span class="check">✓</span> Support 7j/7 (réponse sous 4 h)</li>
+          <li><span class="check">✓</span> Analytics et tableaux de bord</li>
+          <li><span class="check">✓</span> Formation équipe complète</li>
+          <li><span class="check">✓</span> Revue stratégique mensuelle</li>
+          <li><span class="check">✓</span> 150+ intégrations natives</li>
+        </ul>
+        <button class="btn" onclick="openModal()" style="width:100%;justify-content:center">Démarrer →</button>
+        <p class="price-note">Sans engagement · Annulation 30 jours</p>
+      </div>
+      <!-- Entreprise -->
+      <div class="price-card">
+        <div class="price-name">Entreprise</div>
+        <div class="price-amount" style="font-size:32px;margin-top:5px">Sur mesure</div>
+        <div class="price-setup">Devis personnalisé selon portée</div>
+        <p style="font-size:13.5px;color:var(--muted);margin-bottom:0">Pour les organisations complexes avec des besoins spécifiques d'intégration, de conformité ou de volume.</p>
+        <div class="price-divider"></div>
+        <ul class="price-list">
+          <li><span class="check">✓</span> Tout du forfait Croissance</li>
+          <li><span class="check">✓</span> Architecture multi-sites</li>
+          <li><span class="check">✓</span> Agents IA spécialisés par département</li>
+          <li><span class="check">✓</span> Intégration ERP existant</li>
+          <li><span class="check">✓</span> SLA garanti (temps de réponse défini)</li>
+          <li><span class="check">✓</span> Gestionnaire de compte dédié</li>
+          <li><span class="check">✓</span> Développement sur mesure</li>
+          <li><span class="check">✓</span> Audit sécurité Loi 25 inclus</li>
+          <li><span class="check">✓</span> Revue stratégique hebdomadaire</li>
+        </ul>
+        <button class="btn outline-green" onclick="openModal()" style="width:100%;justify-content:center">Nous contacter →</button>
+        <p class="price-note">Entente annuelle recommandée · Conditions flexibles</p>
+      </div>
+    </div>
+    <div class="reveal mt-8" style="background:var(--bg3);border:1px solid var(--line);border-radius:16px;padding:22px 28px;text-align:center">
+      <p style="font-size:15px;color:var(--muted)">Tous les forfaits incluent : hébergement canadien · conformité Loi 25 / PIPEDA · setup en 48 h · documentation complète · mises à jour incluses</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROI CALCULATOR ===== -->
+<section class="blk">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <div class="eyebrow">Calculateur ROI</div>
+      <h2>Estimez vos gains avant de signer</h2>
+      <p>Ajustez les paramètres selon votre réalité et voyez le ROI estimé de votre investissement en automatisation.</p>
+    </div>
+    <div class="roi-box reveal">
+      <div class="roi-inputs">
+        <div class="roi-field">
+          <label>Nombre d'employés</label>
+          <input type="range" id="employees" min="1" max="50" value="5" oninput="calcROI()">
+          <div class="range-val" id="employeesVal">5 employés</div>
+        </div>
+        <div class="roi-field">
+          <label>Heures admin / employé / semaine</label>
+          <input type="range" id="adminHours" min="1" max="20" value="8" oninput="calcROI()">
+          <div class="range-val" id="adminHoursVal">8 h / semaine</div>
+        </div>
+        <div class="roi-field">
+          <label>Taux horaire moyen ($/h)</label>
+          <input type="range" id="hourlyRate" min="20" max="150" value="40" step="5" oninput="calcROI()">
+          <div class="range-val" id="hourlyRateVal">40 $/h</div>
+        </div>
+        <div class="roi-field">
+          <label>% tâches automatisables estimé</label>
+          <input type="range" id="autoPercent" min="20" max="80" value="50" step="5" oninput="calcROI()">
+          <div class="range-val" id="autoPercentVal">50 %</div>
+        </div>
+      </div>
+      <div class="roi-results">
+        <h3>Votre potentiel d'économies</h3>
+        <div class="roi-row">
+          <span class="roi-lbl">Heures admin / mois</span>
+          <span class="roi-val" id="totalHours">—</span>
+        </div>
+        <div class="roi-row">
+          <span class="roi-lbl">Coût mensuel actuel</span>
+          <span class="roi-val" id="currentCost">—</span>
+        </div>
+        <div class="roi-row">
+          <span class="roi-lbl">Heures récupérées / mois</span>
+          <span class="roi-val" id="savedHours">—</span>
+        </div>
+        <div class="roi-row">
+          <span class="roi-lbl">Économies mensuelles</span>
+          <span class="roi-val" id="monthlySavings">—</span>
+        </div>
+        <div class="roi-highlight">
+          <div class="rh-lbl">Économies annuelles estimées</div>
+          <div class="rh-val grad-text" id="annualSavings">—</div>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:14px;text-align:center">Estimation indicative. Résultats réels varient selon votre secteur.</p>
+        <button class="btn mt-4" onclick="openModal()" style="width:100%;justify-content:center">Valider avec notre équipe →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ECOSYSTEM ===== -->
+<section class="blk" id="plateforme" style="background:var(--bg2);padding:96px 0">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <div class="eyebrow">Écosystème technologique</div>
+      <h2>Tous vos outils, un seul flux</h2>
+      <p>Nous connectons les meilleures solutions du marché à votre réalité opérationnelle.</p>
+    </div>
+    <div class="eco-grid reveal">
+      <div class="eco-card"><div class="eco-ic">🔄</div><h4>Automatisation</h4><p>Workflows automatisés</p></div>
+      <div class="eco-card"><div class="eco-ic">🎙️</div><h4>Voix IA</h4><p>IA vocale avancée</p></div>
+      <div class="eco-card"><div class="eco-ic">⚡</div><h4>Intégrations</h4><p>Intégrations visuelles</p></div>
+      <div class="eco-card"><div class="eco-ic">📊</div><h4>ERP + CRM</h4><p>ERP + CRM personnalisé</p></div>
+      <div class="eco-card"><div class="eco-ic">🤖</div><h4>Moteur IA</h4><p>Intelligence artificielle</p></div>
+      <div class="eco-card"><div class="eco-ic">💳</div><h4>Paiements</h4><p>Paiements CA intégrés</p></div>
+      <div class="eco-card"><div class="eco-ic">📞</div><h4>Téléphonie</h4><p>Téléphonie multi-canal</p></div>
+      <div class="eco-card"><div class="eco-ic">📈</div><h4>BI &amp; Analytics</h4><p>Rapports en temps réel</p></div>
+    </div>
+    <p class="reveal text-muted text-sm mt-6" style="text-align:center">+ 150 intégrations natives disponibles · Votre stack existant sera connecté.</p>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="blk">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <div class="eyebrow">Fonctionnalités</div>
+      <h2>Ce que vous obtenez</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card reveal">
+        <div class="feat-icon">🎙️</div>
+        <h3>Agents IA vocaux</h3>
+        <p>Assistants intelligents actifs 24/7 en français et en anglais — accueil, qualification, prise de RDV.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">🔄</div>
+        <h3>Workflows sans code</h3>
+        <p>Automatisations complexes en glisser-déposer, connectées à vos outils actuels.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">📊</div>
+        <h3>CRM avancé</h3>
+        <p>Pipeline de ventes, suivi client, historique complet. Taillé pour vos processus, pas l'inverse.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">🔌</div>
+        <h3>Intégrations natives</h3>
+        <p>Connectez votre écosystème existant : e-commerce, comptabilité, téléphonie, marketing.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">📈</div>
+        <h3>Analytics temps réel</h3>
+        <p>Tableaux de bord opérationnels, KPIs clés, alertes automatiques. Décisions basées sur les données.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">🔒</div>
+        <h3>Sécurité &amp; conformité</h3>
+        <p>Données hébergées au Canada. Conformité Loi 25 et PIPEDA garantie. Chiffrement de bout en bout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TÉMOIGNAGES ===== -->
+<section class="blk" style="background:var(--bg2);padding:96px 0">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <div class="eyebrow">Témoignages</div>
+      <h2>Ce que disent nos clients</h2>
+      <p>Des PME québécoises et canadiennes qui ont repris le contrôle de leur temps.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">« WizflowAI a transformé notre façon de gérer les soumissions. Ce qui prenait 3 heures par jour est maintenant automatisé. Nos chargés de projet se concentrent sur le chantier, pas sur l'administration. »</p>
+        <div class="testi-author">
+          <div class="testi-avatar">🏗️</div>
+          <div>
+            <div class="testi-name">Marc-André Bouchard</div>
+            <div class="testi-role">Directeur général · Entreprise de construction, Laval</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">« L'agent vocal répond aux demandes de nos clients à 23 h. On n'a perdu aucun lead depuis l'implantation. Le setup en 48 h, c'était pas un argument marketing — c'était vrai. »</p>
+        <div class="testi-author">
+          <div class="testi-avatar">💆</div>
+          <div>
+            <div class="testi-name">Sophie Lalonde</div>
+            <div class="testi-role">Propriétaire · Spa &amp; centre de bien-être, Montréal</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">« On gérait nos clients dans des Excel. Maintenant on a un CRM branché à notre comptabilité, avec des relances automatiques. On a réduit notre cycle de vente de 40 % en deux mois. »</p>
+        <div class="testi-author">
+          <div class="testi-avatar">📊</div>
+          <div>
+            <div class="testi-name">David Nguyen</div>
+            <div class="testi-role">Fondateur · Cabinet-conseil PME, Québec</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENGAGEMENT ===== -->
+<section class="blk">
+  <div class="wrap">
+    <div class="engage-box reveal">
+      <div>
+        <div class="eyebrow mb-4">Notre engagement</div>
+        <h2 style="font-size:clamp(24px,3vw,36px);margin-bottom:16px">Transparence totale.<br><span class="grad-text">Du premier appel à la livraison.</span></h2>
+        <p style="color:var(--muted);font-size:15px;margin-bottom:24px">Chaque mandat est unique. Nous ne vendons jamais un forfait générique — chaque devis reflète exactement le travail à réaliser et le retour sur investissement attendu.</p>
+        <button class="btn" onclick="openModal()">Démarrer avec une consultation gratuite</button>
+      </div>
+      <div>
+        <ul class="list-check">
+          <li>Consultation stratégique de 30 min sans frais</li>
+          <li>Diagnostic et feuille de route personnalisés</li>
+          <li>Devis fixe — aucune surprise en cours de mandat</li>
+          <li>Setup garanti en 48 heures</li>
+          <li>Données hébergées au Canada, conformité Loi 25</li>
+          <li>Support 24/7 inclus post-déploiement</li>
+          <li>Revue stratégique trimestrielle incluse</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="blk" id="faq" style="background:var(--bg2);padding:96px 0">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <div class="eyebrow">Questions fréquentes</div>
+      <h2>Tout ce que vous voulez savoir</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span>Combien de temps prend l'implantation ?</span>
+          <span class="faq-arr">▾</span>
+        </div>
+        <div class="faq-a">
+          <p>Notre engagement est un premier livrable fonctionnel en 48 heures après le lancement officiel du mandat. Pour une implantation complète (CRM + workflows + agent vocal), comptez 1 à 3 semaines selon la complexité. Nous privilégions un déploiement progressif : vous avez des résultats concrets rapidement, puis nous ajoutons des couches.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span>Mes données sont-elles vraiment hébergées au Canada ?</span>
+          <span class="faq-arr">▾</span>
+        </div>
+        <div class="faq-a">
+          <p>Oui, sans exception. Tous nos serveurs sont hébergés en territoire canadien (principalement en Ontario et au Québec). Nous utilisons des fournisseurs cloud qui garantissent la résidence des données au Canada. Nos configurations sont conformes à la Loi 25 (Québec) et au PIPEDA (fédéral). Nous pouvons vous fournir une attestation écrite sur demande.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span>Est-ce que je dois changer tous mes outils actuels ?</span>
+          <span class="faq-arr">▾</span>
+        </div>
+        <div class="faq-a">
+          <p>Non. Notre approche est d'abord d'auditer ce que vous avez et d'identifier ce qui vaut la peine d'être conservé. Si vous avez déjà un CRM, une téléphonie, ou d'autres systèmes qui fonctionnent, on les intègre. On ne vous vend pas du remplacement inutile — on vous vend de l'efficacité. Les seuls remplacements recommandés sont ceux où le ROI est clairement supérieur.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span>Que se passe-t-il si ça ne fonctionne pas pour moi ?</span>
+          <span class="faq-arr">▾</span>
+        </div>
+        <div class="faq-a">
+          <p>Tous nos forfaits mensuels sont sans engagement à long terme, avec une période de préavis de 30 jours. Si vous n'êtes pas satisfait dans les 30 premiers jours suivant l'implantation, nous nous engageons à corriger gratuitement tout écart par rapport aux livrables convenus. Notre réputation repose sur des résultats mesurables — pas sur des clauses de verrouillage.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span>Mon équipe devra-t-elle se former longtemps ?</span>
+          <span class="faq-arr">▾</span>
+        </div>
+        <div class="faq-a">
+          <p>La formation initiale est incluse dans chaque mandat. En pratique, la majorité des équipes sont à l'aise en 1 à 2 séances de 2 heures. Nos systèmes sont conçus pour être utilisés sans expertise technique. Un employé qui sait utiliser un courriel peut gérer les workflows que nous configurons. Pour les fonctions avancées, nous créons des guides internes sur mesure pour votre équipe.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span>Est-ce que vous travaillez avec les très petites entreprises (1–3 personnes) ?</span>
+          <span class="faq-arr">▾</span>
+        </div>
+        <div class="faq-a">
+          <p>Absolument. Certains de nos meilleurs résultats viennent de solopreneurs et de très petites équipes où chaque heure récupérée a un impact direct sur la croissance. Notre forfait Essentiel est conçu spécifiquement pour ce profil. La consultation gratuite de 30 min nous permet de déterminer ensemble si ça vaut la peine d'aller de l'avant — sans pression.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <h2>Prêt à <span class="grad-text">automatiser</span> votre entreprise ?</h2>
+      <p>Rejoignez les PME canadiennes qui reprennent le contrôle de leur temps avec WizflowAI. Consultation stratégique gratuite — sans engagement.</p>
+      <div class="cta-btns">
+        <button class="btn" onclick="openModal()">Consultation gratuite → 30 min</button>
+        <a href="mailto:contact@wizflowai.com" class="btn ghost">contact@wizflowai.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <div class="fic">⚡</div>
+          WizflowAI
+        </div>
+        <p class="sub">Plateforme d'automatisation IA pour PME canadiennes. Entreprise canadienne, Laval.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Diagnostic IA</a></li>
+          <li><a href="#services">Implantation clé en main</a></li>
+          <li><a href="#services">Optimisation continue</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Secteurs</h5>
+        <ul>
+          <li><a href="#solutions">Immobilier</a></li>
+          <li><a href="#solutions">Construction</a></li>
+          <li><a href="#solutions">Salons &amp; spas</a></li>
+          <li><a href="#solutions">Finance</a></li>
+          <li><a href="#solutions">PME &amp; startups</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Entreprise</h5>
+        <ul>
+          <li><a href="#tarification">Forfaits</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="mailto:contact@wizflowai.com">Contact</a></li>
+          <li><a href="#" onclick="openModal();return false">Consultation gratuite</a></li>
+          <li><a href="#">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 WizflowAI. Tous droits réservés.</p>
+      <div class="foot-badges">
+        <span class="fbadge">🇨🇦 Entreprise canadienne</span>
+        <span class="fbadge">🔒 Loi 25 conforme</span>
+        <span class="fbadge">📋 PIPEDA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MODAL CONTACT ===== -->
+<div class="modal-bg" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2>Démarrez avec WizflowAI</h2>
+    <p class="sub">Remplissez le formulaire — notre équipe vous contacte sous 24 h.</p>
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="field"><label>Prénom *</label><input type="text" required placeholder="Jean"></div>
+        <div class="field"><label>Nom *</label><input type="text" required placeholder="Tremblay"></div>
+      </div>
+      <div class="field"><label>Courriel professionnel *</label><input type="email" required placeholder="jean@entreprise.com"></div>
+      <div class="field"><label>Téléphone *</label><input type="tel" required placeholder="+1 (514) 555-0100"></div>
+      <div class="field"><label>Entreprise *</label><input type="text" required placeholder="Nom de votre entreprise"></div>
+      <div class="form-row">
+        <div class="field">
+          <label>Industrie *</label>
+          <select required>
+            <option value="">Sélectionnez…</option>
+            <option>Courtage immobilier</option>
+            <option>Construction / rénovation</option>
+            <option>Salons / spas / bien-être</option>
+            <option>Finance / comptabilité</option>
+            <option>Recrutement / RH</option>
+            <option>PME / services</option>
+            <option>Startup tech</option>
+            <option>Commerce de détail</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Forfait d'intérêt</label>
+          <select>
+            <option value="">Pas encore décidé</option>
+            <option>Essentiel</option>
+            <option>Croissance</option>
+            <option>Entreprise (sur mesure)</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Qu'est-ce que vous souhaitez automatiser ?</label>
+        <textarea placeholder="Décrivez vos processus actuels, vos défis, ce qui vous ralentit…"></textarea>
+      </div>
+      <button type="submit" class="btn" style="width:100%;justify-content:center">Envoyer ma demande →</button>
+      <p class="form-note">En soumettant ce formulaire, vous acceptez notre politique de confidentialité. Nous ne vendons jamais vos données.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+// Modal
+function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow=''}
+
+// Form submit (staging — pas d'envoi externe)
+function handleSubmit(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('[type=submit]');
+  btn.textContent='Envoi en cours…';btn.disabled=true;
+  setTimeout(()=>{
+    e.target.innerHTML='<div style="text-align:center;padding:32px 0"><div style="font-size:48px;margin-bottom:16px">✅</div><h3 style="margin-bottom:10px">Demande reçue !</h3><p style="color:var(--muted);font-size:15px">Notre équipe vous contacte sous 24 h. À très bientôt !</p></div>';
+  },900);
+}
+
+// FAQ accordion
+function toggleFAQ(el){
+  const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+
+// ROI Calculator
+function calcROI(){
+  const emp=+document.getElementById('employees').value;
+  const hrs=+document.getElementById('adminHours').value;
+  const rate=+document.getElementById('hourlyRate').value;
+  const pct=+document.getElementById('autoPercent').value/100;
+
+  document.getElementById('employeesVal').textContent=emp+' employé'+(emp>1?'s':'');
+  document.getElementById('adminHoursVal').textContent=hrs+' h / semaine';
+  document.getElementById('hourlyRateVal').textContent=rate+' $/h';
+  document.getElementById('autoPercentVal').textContent=Math.round(pct*100)+' %';
+
+  const totalHrsMonth=emp*hrs*4.33;
+  const currentCost=totalHrsMonth*rate;
+  const savedHrs=totalHrsMonth*pct;
+  const monthlySav=savedHrs*rate;
+  const annualSav=monthlySav*12;
+
+  const fmt=n=>new Intl.NumberFormat('fr-CA',{style:'currency',currency:'CAD',maximumFractionDigits:0}).format(n);
+  document.getElementById('totalHours').textContent=Math.round(totalHrsMonth)+' h';
+  document.getElementById('currentCost').textContent=fmt(currentCost);
+  document.getElementById('savedHours').textContent=Math.round(savedHrs)+' h';
+  document.getElementById('monthlySavings').textContent=fmt(monthlySav);
+  document.getElementById('annualSavings').textContent=fmt(annualSav);
+}
+calcROI();
+
+// Scroll reveal
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

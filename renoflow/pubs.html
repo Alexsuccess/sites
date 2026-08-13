@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>RenoFlow — Créatifs publicitaires (staging)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Figtree:wght@400;500;600;700;800;900&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#181e28; --paper:#f6f4ef; --brand:#1e3d5c; --brand-2:#2a5580; --brand-3:#163049;
+  --accent:#d4773a; --accent-deep:#b86028; --accent-light:#faeee3;
+  --stone:#8a98a5; --mist:#d0dce5; --line:#dbd7cc; --muted:#5a6870;
+  --bg2:#eef0ea; --cream:#faf8f4; --white:#ffffff;
+  --green:#1f6040; --green-bg:#e8f5ee;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#e7e4dc;color:var(--ink);font-family:"Figtree",system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding:40px 20px 80px}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;line-height:1.02;letter-spacing:-.015em}
+.mono{font-family:"Spline Sans Mono",monospace;font-variant-numeric:tabular-nums}
+
+/* ── Page chrome (not part of the ads) ───────────── */
+.page-head{max-width:1160px;margin:0 auto 46px;padding:22px 26px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 1px 3px rgba(24,30,40,.08)}
+.page-head h1{font-size:26px;color:var(--brand);font-weight:600}
+.page-head p{color:var(--muted);font-size:14.5px;margin-top:8px;line-height:1.55;max-width:70ch}
+.page-head .tag{display:inline-block;font-family:"Spline Sans Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);background:var(--accent-light);padding:5px 11px;border-radius:999px;margin-bottom:12px}
+.gallery{max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;gap:44px;align-items:flex-start;justify-content:center}
+.slot{display:flex;flex-direction:column;gap:10px}
+.slot .cap{font-family:"Spline Sans Mono",monospace;font-size:11.5px;color:#4a5560;letter-spacing:.03em;text-align:center}
+.slot .cap b{color:var(--brand)}
+
+/* ── Shared ad shell ─────────────────────────────── */
+.ad{position:relative;overflow:hidden;color:#fff;box-shadow:0 24px 60px -24px rgba(24,30,40,.5);border-radius:6px}
+.ad .brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces";font-weight:600;color:#fff}
+.ad .brand-mark{border-radius:8px;background:var(--accent);position:relative;flex:0 0 auto}
+.ad .brand-mark::before{content:"";position:absolute;top:30%;left:23%;right:23%;height:10%;background:#fff;border-radius:2px}
+.ad .brand-mark::after{content:"";position:absolute;bottom:26%;left:23%;right:40%;height:10%;background:rgba(255,255,255,.5);border-radius:2px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:"Spline Sans Mono",monospace;font-weight:600;text-transform:uppercase;background:var(--accent);color:#fff;border-radius:999px;letter-spacing:.12em}
+.rbq{display:inline-flex;align-items:center;gap:7px;font-family:"Spline Sans Mono",monospace;letter-spacing:.05em;color:rgba(255,255,255,.72)}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;font-family:"Figtree";font-weight:800;border-radius:12px;white-space:nowrap}
+.cta.light{background:#fff;color:var(--brand)}
+.url{font-family:"Spline Sans Mono",monospace;letter-spacing:.02em;color:rgba(255,255,255,.68)}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.9;pointer-events:none}
+.ring{position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,.14);pointer-events:none}
+
+/* Navy base gradient shared by most creatives */
+.bg-navy{background:radial-gradient(120% 120% at 85% 0%,#2a5580 0%,#1e3d5c 42%,#122536 100%)}
+.bg-copper{background:linear-gradient(150deg,#e5883f 0%,#d4773a 45%,#b86028 100%)}
+
+/* ═══ AD 1 — Square 1080×1080 (feed) ═════════════ */
+#ad1{width:1080px;height:1080px;padding:78px}
+#ad1 .brand{font-size:38px}
+#ad1 .brand-mark{width:52px;height:52px}
+#ad1 .top{display:flex;justify-content:space-between;align-items:center}
+#ad1 .badge{font-size:19px;padding:12px 22px;margin:74px 0 30px}
+#ad1 h2{font-size:118px;font-weight:600;color:#fff;letter-spacing:-.03em}
+#ad1 h2 .free{color:var(--accent);display:block;font-weight:900;font-size:150px;margin-top:6px}
+#ad1 .sub{font-size:33px;color:rgba(255,255,255,.82);margin-top:34px;line-height:1.4;max-width:20ch;font-weight:500}
+#ad1 .foot{position:absolute;left:78px;right:78px;bottom:74px;display:flex;justify-content:space-between;align-items:flex-end}
+#ad1 .cta{font-size:29px;padding:22px 40px}
+#ad1 .rbq{font-size:19px}
+
+/* ═══ AD 2 — Story 1080×1920 (Reels/Stories) ═════ */
+#ad2{width:1080px;height:1920px;padding:96px 84px}
+#ad2 .brand{font-size:40px}
+#ad2 .brand-mark{width:56px;height:56px}
+#ad2 .kicker{font-family:"Spline Sans Mono",monospace;font-size:24px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:150px 0 26px}
+#ad2 h2{font-size:130px;font-weight:600;color:#fff;letter-spacing:-.03em}
+#ad2 .save{display:block;font-weight:900;font-size:210px;color:var(--accent);margin:14px 0;line-height:.9}
+#ad2 .sub{font-size:36px;color:rgba(255,255,255,.85);line-height:1.45;max-width:22ch;font-weight:500;margin-top:20px}
+#ad2 .quote{position:absolute;left:84px;right:84px;bottom:340px;font-family:"Fraunces";font-style:italic;font-size:34px;line-height:1.4;color:rgba(255,255,255,.9);border-left:4px solid var(--accent);padding-left:26px}
+#ad2 .quote span{display:block;font-family:"Spline Sans Mono";font-style:normal;font-size:22px;color:rgba(255,255,255,.6);margin-top:14px;letter-spacing:.04em}
+#ad2 .foot{position:absolute;left:84px;right:84px;bottom:118px;display:flex;flex-direction:column;gap:34px}
+#ad2 .cta{font-size:36px;padding:30px 0;justify-content:center;width:100%}
+#ad2 .url{font-size:26px;text-align:center;width:100%}
+
+/* ═══ AD 3 — Landscape 1200×628 (Display/Meta) ═══ */
+#ad3{width:1200px;height:628px;padding:64px 70px;display:flex;flex-direction:column;justify-content:space-between}
+#ad3 .top{display:flex;justify-content:space-between;align-items:center}
+#ad3 .brand{font-size:30px}
+#ad3 .brand-mark{width:42px;height:42px}
+#ad3 .badge{font-size:15px;padding:9px 17px}
+#ad3 h2{font-size:76px;font-weight:600;color:#fff;letter-spacing:-.03em;max-width:15ch;margin-top:8px}
+#ad3 h2 em{font-style:normal;color:var(--accent)}
+#ad3 .row{display:flex;align-items:center;gap:26px;margin-top:24px}
+#ad3 .chip{display:flex;align-items:center;gap:10px;font-size:20px;color:rgba(255,255,255,.85);font-weight:600}
+#ad3 .chip b{color:var(--accent);font-family:"Fraunces";font-weight:700;font-size:26px}
+#ad3 .foot{display:flex;justify-content:space-between;align-items:center}
+#ad3 .cta{font-size:23px;padding:17px 34px}
+#ad3 .rbq{font-size:16px}
+
+/* ═══ AD 4 — Promo trio 1080×1080 (offers) ═══════ */
+#ad4{width:1080px;height:1080px;padding:74px}
+#ad4 .brand{font-size:34px;color:var(--brand)}
+#ad4 .brand-mark{width:46px;height:46px}
+#ad4 .brand-mark::before{background:#fff}
+#ad4 .head{display:flex;justify-content:space-between;align-items:center}
+#ad4 .badge{font-size:16px;padding:10px 18px;background:var(--brand)}
+#ad4 h2{color:var(--brand);font-size:70px;font-weight:600;margin:56px 0 12px;letter-spacing:-.02em}
+#ad4 h2 em{font-style:normal;color:var(--accent-deep)}
+#ad4 .lede{color:var(--muted);font-size:25px;max-width:26ch;line-height:1.4;font-weight:500}
+#ad4 .cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:52px}
+#ad4 .c{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px 26px;box-shadow:0 14px 30px -18px rgba(24,30,40,.3)}
+#ad4 .c .n{font-family:"Fraunces";font-weight:900;font-size:64px;color:var(--accent-deep);line-height:.9;letter-spacing:-.03em}
+#ad4 .c .n small{font-size:30px;font-weight:600}
+#ad4 .c .l{color:var(--ink);font-weight:700;font-size:23px;margin-top:16px;font-family:"Fraunces"}
+#ad4 .c .d{color:var(--muted);font-size:17px;margin-top:8px;line-height:1.4}
+#ad4 .foot{position:absolute;left:74px;right:74px;bottom:66px;display:flex;justify-content:space-between;align-items:center}
+#ad4 .cta{font-size:24px;padding:18px 34px}
+#ad4 .foot .url{color:var(--muted)}
+
+@media print{
+  body{background:#fff;padding:0}
+  .page-head{display:none}
+  .gallery{gap:0}
+  .slot .cap{display:none}
+  .ad{box-shadow:none;border-radius:0;page-break-after:always}
+}
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <span class="tag">Staging — à valider Karl</span>
+  <h1>RenoFlow · Jeu de créatifs publicitaires</h1>
+  <p>4 formats prêts à exporter (feed carré, story/reel 9:16, display paysage Meta/Google 1200×628, carte promo trio). Style promotionnel « UI8 Summer Sale » adapté aux tokens de marque RenoFlow (navy #1e3d5c + cuivre #d4773a, Fraunces/Figtree). Promos réelles tirées du site : publication gratuite, blind bidding (économie constatée), fonds en fiducie, résultats 48 h, entrepreneurs certifiés RBQ. <b>Aucune diffusion — export/validation manuelle uniquement.</b> Pour exporter : ouvrir dans le navigateur → capture de chaque carte à sa taille native, ou Imprimer → PDF.</p>
+</div>
+
+<div class="gallery">
+
+  <!-- AD 1 — SQUARE FEED -->
+  <div class="slot">
+    <div class="ad bg-navy" id="ad1">
+      <div class="blob" style="width:520px;height:520px;top:-160px;right:-160px;background:radial-gradient(circle,rgba(212,119,58,.55),transparent 68%)"></div>
+      <div class="ring" style="width:760px;height:760px;bottom:-330px;left:-230px"></div>
+      <div class="ring" style="width:560px;height:560px;bottom:-230px;left:-130px"></div>
+      <div class="top">
+        <div class="brand"><span class="brand-mark"></span>RenoFlow</div>
+        <span class="rbq" style="font-size:19px">✦ Entrepreneurs certifiés RBQ</span>
+      </div>
+      <span class="badge">● Lancement Québec</span>
+      <h2>Votre projet de réno<span class="free">100 % gratuit</span></h2>
+      <p class="sub">Publiez, recevez des soumissions anonymes, choisissez. En 5 minutes.</p>
+      <div class="foot">
+        <span class="cta">Publier un projet →</span>
+        <span class="rbq">renoflow.online</span>
+      </div>
+    </div>
+    <div class="cap"><b>Feed 1:1</b> · 1080×1080 · Meta/Instagram</div>
+  </div>
+
+  <!-- AD 2 — STORY -->
+  <div class="slot">
+    <div class="ad bg-navy" id="ad2">
+      <div class="blob" style="width:620px;height:620px;top:-220px;left:-200px;background:radial-gradient(circle,rgba(212,119,58,.5),transparent 68%)"></div>
+      <div class="ring" style="width:900px;height:900px;top:640px;right:-380px"></div>
+      <div class="brand"><span class="brand-mark"></span>RenoFlow</div>
+      <div class="kicker">Blind bidding</div>
+      <h2>Elle a économisé<span class="save">8 000&nbsp;$</span>sur sa cuisine.</h2>
+      <p class="sub">Les entrepreneurs soumissionnent à l'aveugle. Vous comparez le vrai prix — sans pression.</p>
+      <blockquote class="quote">« Le blind bidding m'a vraiment surprise. Et le système de jalons m'a donné une paix d'esprit totale. »
+        <span>— Marie-Ève, propriétaire · Québec</span>
+      </blockquote>
+      <div class="foot">
+        <span class="cta">Publier mon projet gratuitement</span>
+        <span class="url">renoflow.online</span>
+      </div>
+    </div>
+    <div class="cap"><b>Story / Reel 9:16</b> · 1080×1920 · IG / FB / TikTok</div>
+  </div>
+
+  <!-- AD 3 — LANDSCAPE DISPLAY -->
+  <div class="slot">
+    <div class="ad bg-navy" id="ad3">
+      <div class="blob" style="width:440px;height:440px;top:-160px;right:-120px;background:radial-gradient(circle,rgba(212,119,58,.55),transparent 68%)"></div>
+      <div class="ring" style="width:520px;height:520px;bottom:-280px;right:120px"></div>
+      <div class="top">
+        <div class="brand"><span class="brand-mark"></span>RenoFlow</div>
+        <span class="badge">Fonds protégés</span>
+      </div>
+      <div>
+        <h2>Vos paiements en <em>fiducie</em>, débloqués par jalons.</h2>
+        <div class="row">
+          <span class="chip"><b>48 h</b> pour vos soumissions</span>
+          <span class="chip"><b>8-15 %</b> marché affilié</span>
+          <span class="chip"><b>0 $</b> pour publier</span>
+        </div>
+      </div>
+      <div class="foot">
+        <span class="cta">Démarrer mon projet →</span>
+        <span class="rbq">✦ RBQ · renoflow.online</span>
+      </div>
+    </div>
+    <div class="cap"><b>Display 1200×628</b> · Meta / Google Display</div>
+  </div>
+
+  <!-- AD 4 — PROMO TRIO (light) -->
+  <div class="slot">
+    <div class="ad" id="ad4" style="background:var(--cream)">
+      <div class="head">
+        <div class="brand"><span class="brand-mark" style="background:var(--brand)"></span>RenoFlow</div>
+        <span class="badge">Offre de lancement</span>
+      </div>
+      <h2>Rénovez <em>l'esprit tranquille</em>.</h2>
+      <p class="lede">Trois raisons de publier votre projet dès aujourd'hui.</p>
+      <div class="cards">
+        <div class="c">
+          <div class="n">0<small>&nbsp;$</small></div>
+          <div class="l">Publication gratuite</div>
+          <div class="d">Aucune coordonnée requise. Confidentiel jusqu'à votre choix.</div>
+        </div>
+        <div class="c">
+          <div class="n">48<small>&nbsp;h</small></div>
+          <div class="l">Soumissions rapides</div>
+          <div class="d">Des entrepreneurs certifiés RBQ répondent en 2 jours.</div>
+        </div>
+        <div class="c">
+          <div class="n">100<small>&nbsp;%</small></div>
+          <div class="l">Fonds en fiducie</div>
+          <div class="d">Payez par jalons. Votre argent reste protégé du début à la fin.</div>
+        </div>
+      </div>
+      <div class="foot">
+        <span class="cta">Publier un projet →</span>
+        <span class="url">renoflow.online</span>
+      </div>
+    </div>
+    <div class="cap"><b>Feed 1:1 clair</b> · 1080×1080 · offres / carrousel</div>
+  </div>
+
+</div>
+</body>
+</html>

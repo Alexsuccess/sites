@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AccèsFinance — On tient les comptes. Comptez sur nous.</title>
+<meta name="description" content="Comptabilité pour entrepreneurs qui aiment gagner du temps. Tenue de livres, TPS/TVQ, paie et états financiers au Québec. Un vrai spécialiste dédié. Première consultation gratuite.">
+<link rel="canonical" href="https://accesfinance.pro/">
+<meta name="theme-color" content="#1E9B72">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/svg+xml" sizes="any" href="favicon.svg">
+<link rel="mask-icon" href="/favicon.svg" color="#E8A830">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AccèsFinance">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:url" content="https://accesfinance.pro/">
+<meta property="og:title" content="AccèsFinance — On tient les comptes. Comptez sur nous.">
+<meta property="og:description" content="Comptabilité pour entrepreneurs au Québec : tenue de livres, TPS/TVQ, paie et états financiers, avec un vrai spécialiste dédié. Première consultation gratuite.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?w=1200&h=630&fit=crop&q=80&auto=format">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AccèsFinance — comptabilité pour entrepreneurs au Québec">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AccèsFinance — On tient les comptes. Comptez sur nous.">
+<meta name="twitter:description" content="Comptabilité pour entrepreneurs au Québec : tenue de livres, TPS/TVQ, paie et états financiers, avec un vrai spécialiste dédié.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?w=1200&h=630&fit=crop&q=80&auto=format">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Palette AccèsFinance — vert pin / crème / orange (2026-08-04, retour demandé) */
+  :root{
+    --ink:#2C3A2E; --ink-strong:#1C2A20;
+    --paper:#FAF7EF; --surface:#F4EFE2; --surface-2:#FFFFFF; --surface-3:#F0EADB;
+    --pine:#1E9B72; --pine-2:#127a57;
+    --amber:#E8A830; --amber-deep:#D4922A; --amber-glow:rgba(232,168,48,.16);
+    --sage:#EFEAD9; --line:#E4DCC8; --muted:#6E7A6B;
+    --shadow:0 1px 2px rgba(28,42,32,.06),0 20px 48px -18px rgba(28,42,32,.22);
+    --shadow-card:0 1px 2px rgba(28,42,32,.05),0 8px 22px -10px rgba(28,42,32,.18);
+    --r:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:"Figtree",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:700;line-height:1.05;letter-spacing:-.01em;color:var(--ink-strong)}
+  .mono{font-family:"Spline Sans Mono",monospace;font-variant-numeric:tabular-nums}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:"Spline Sans Mono",monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(250,247,239,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces";font-size:20px;font-weight:600;color:var(--ink-strong)}
+  .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--pine);position:relative;flex:0 0 auto}
+  .brand .mark::after{content:"";position:absolute;inset:7px 6px auto 6px;height:3px;border-radius:2px;background:var(--amber);box-shadow:0 5px 0 rgba(255,255,255,.15),0 10px 0 rgba(255,255,255,.08)}
+  .navlinks{display:flex;gap:30px;align-items:center;font-size:15px;color:var(--muted)}
+  .navlinks a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#120C00;font-weight:700;padding:12px 22px;border-radius:11px;font-size:15px;border:1px solid var(--amber-deep);cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;font-family:inherit;letter-spacing:.01em}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(212,146,42,.55)}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn.ghost:hover{background:var(--surface-2);box-shadow:none}
+  .navlinks .btn{color:#120C00}
+  @media(max-width:780px){.navlinks a:not(.btn){display:none}}
+
+  .hero{padding:72px 0 52px;position:relative}
+  .hero::before{content:"";position:absolute;top:-100px;right:-120px;width:560px;height:560px;background:radial-gradient(circle,var(--amber-glow),transparent 62%);pointer-events:none}
+  .hero::after{content:"";position:absolute;bottom:-80px;left:-100px;width:380px;height:380px;background:radial-gradient(circle,rgba(30,155,114,.08),transparent 62%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;position:relative}
+  .hook{display:block;font-family:"Fraunces",Georgia,serif;font-size:clamp(21px,2.6vw,28px);color:var(--amber);margin-bottom:12px;font-weight:500}
+  .hero h1{font-size:clamp(32px,4.8vw,56px);max-width:15ch;color:var(--ink-strong)}
+  .hero .slogan{margin-top:18px;font-size:clamp(18px,2.3vw,24px);font-weight:700;color:var(--amber)}
+  .hero p.lead{margin:16px 0 30px;font-size:18px;color:var(--muted);max-width:38ch}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .rowmini{margin-top:24px;font-size:14px;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap}
+  .rowmini b{color:var(--ink);font-weight:600}
+  .hero-media{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1px var(--line),var(--shadow);aspect-ratio:4/4.5}
+  .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .af-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;animation:kb 20s ease-in-out infinite alternate}
+  .af-slide.active{opacity:1;position:relative}
+  .af-cap{position:absolute;left:16px;top:16px;background:rgba(8,20,36,.82);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-family:"Spline Sans Mono";font-size:12px;letter-spacing:.06em;color:var(--pine-2);z-index:2}
+  .af-dots{position:absolute;bottom:14px;left:0;right:0;display:flex;gap:8px;justify-content:center;z-index:2}
+  .af-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);transition:width .3s,background .3s}
+  .af-dots span.on{background:#fff;width:22px;border-radius:5px}
+  @keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+  /* Tooltip budget (titre / explication au survol) */
+  .budg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:700px){.budg{grid-template-columns:1fr}}
+  .budg-item{position:relative;background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:20px;cursor:default;overflow:hidden}
+  .budg-item .bt{font-family:"Fraunces";font-size:19px;color:var(--ink-strong);transition:opacity .25s,transform .25s}
+  .budg-item .be{position:absolute;inset:0;display:flex;align-items:center;padding:20px;background:linear-gradient(135deg,var(--amber),var(--pine));color:#06131f;font-size:14.5px;line-height:1.5;font-weight:600;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}
+  .budg-item:hover .be,.budg-item:focus-within .be{opacity:1;transform:none}
+  .budg-item:hover .bt{opacity:0}
+  .badge{position:absolute;left:16px;bottom:16px;background:rgba(13,15,24,.90);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:13px 16px;box-shadow:var(--shadow-card)}
+  .badge .k{font-family:"Spline Sans Mono";font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .badge .v{font-family:"Fraunces";font-size:26px;font-weight:600;color:var(--amber);line-height:1}
+  .badge .v small{font-size:13px;color:var(--muted);font-family:"Spline Sans Mono"}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero p.lead,.hero h1{max-width:none}.hero-media{aspect-ratio:16/12}}
+
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+  .trust .wrap{display:flex;gap:30px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:18px 24px}
+  .trust span{font-size:14px;color:var(--muted);display:flex;align-items:center;gap:9px}
+  .trust b{color:var(--amber);font-family:"Spline Sans Mono";font-size:14px}
+
+  section.blk{padding:82px 0}
+  .shead{max-width:660px;margin-bottom:42px}
+  .shead h2{font-size:clamp(29px,4vw,44px);margin-top:12px}
+  .shead p{color:var(--muted);margin-top:12px}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-card);border-color:rgba(232,168,48,.22)}
+  .card .ic{width:40px;height:40px;border-radius:10px;background:var(--surface-3);display:grid;place-items:center;color:var(--amber);margin-bottom:14px;font-size:19px;border:1px solid var(--line)}
+  .card h3{font-size:20px;margin-bottom:7px;color:var(--ink-strong)}
+  .card p{font-size:15px;color:var(--muted)}
+  @media(max-width:820px){.cards{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.cards{grid-template-columns:1fr}}
+
+  .feat{background:var(--surface);color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .feat .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .feat .eyebrow{color:var(--amber)}
+  .feat h2{color:var(--ink-strong);font-size:clamp(28px,3.6vw,40px);margin-top:12px}
+  .feat p{color:var(--muted);margin-top:14px}
+  .feat .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .feat .pill{border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14px;color:var(--ink);background:var(--surface-3)}
+  .feat .human{margin-top:22px;background:rgba(232,168,48,.06);border:1px solid rgba(232,168,48,.18);border-radius:14px;padding:18px 20px}
+  .feat .human b{color:var(--amber)}
+  .feat .media{border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px var(--line),var(--shadow);aspect-ratio:5/4}
+  .feat .media img{width:100%;height:100%;object-fit:cover}
+  @media(max-width:820px){.feat .wrap{grid-template-columns:1fr;gap:28px}}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .split .media{border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px var(--line),var(--shadow);aspect-ratio:5/4}
+  .split .media img{width:100%;height:100%;object-fit:cover}
+  .split ul{list-style:none;margin-top:18px;display:grid;gap:12px}
+  .split li{display:flex;gap:11px;font-size:16px}
+  .split li::before{content:"✓";color:var(--amber);font-weight:700}
+  @media(max-width:820px){.split{grid-template-columns:1fr;gap:28px}}
+
+  .who .whorow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .whocard{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .2s ease}
+  .whocard:hover{border-color:rgba(232,168,48,.22)}
+  .whocard img{width:100%;height:170px;object-fit:cover;object-position:center 30%;filter:brightness(.88) saturate(.85)}
+  .whocard .t{padding:20px}
+  .whocard h3{font-size:19px;margin-bottom:6px;color:var(--ink-strong)}
+  .whocard p{color:var(--muted);font-size:15px}
+  @media(max-width:760px){.who .whorow{grid-template-columns:1fr}}
+
+  .onb{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .onb .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;padding:70px 24px}
+  .onb h2{font-size:clamp(28px,3.6vw,40px);color:var(--ink-strong)}
+  .onb p{color:var(--muted);margin-top:12px;max-width:36ch}
+  .qform{background:var(--surface-2);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow-card)}
+  .qform label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin:0 0 6px}
+  .qform .fld{margin-bottom:16px}
+  .qform input,.qform select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-family:inherit;background:var(--surface-3);color:var(--ink)}
+  .qform input::placeholder{color:var(--muted)}
+  .qform input:focus,.qform select:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:var(--amber-deep)}
+  .qform select option{background:var(--surface-2)}
+  .qform .btn{width:100%;justify-content:center;margin-top:4px}
+  .qform .hint{font-size:12.5px;color:var(--muted);margin-top:12px;text-align:center}
+  @media(max-width:820px){.onb .wrap{grid-template-columns:1fr;gap:26px}}
+
+  .quote{border-bottom:1px solid var(--line);background:var(--paper)}
+  .quote .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center;padding:66px 24px}
+  .quote .media{border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px var(--line),var(--shadow);aspect-ratio:1/1}
+  .quote .media img{width:100%;height:100%;object-fit:cover;filter:brightness(.85) saturate(.8)}
+  .quote blockquote{font-family:"Fraunces";font-size:clamp(22px,3vw,30px);line-height:1.28;color:var(--ink-strong)}
+  .quote cite{display:block;margin-top:18px;font-style:normal;font-size:15px;color:var(--muted)}
+  @media(max-width:760px){.quote .wrap{grid-template-columns:1fr;gap:26px}}
+
+  .cta-band{padding:82px 0}
+  .cta-inner{background:linear-gradient(135deg,var(--surface-2) 0%,var(--surface-3) 100%);border:1px solid rgba(232,168,48,.2);color:var(--ink);border-radius:24px;padding:52px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;box-shadow:var(--shadow),0 0 0 1px rgba(232,168,48,.08)}
+  .cta-inner h2{font-size:clamp(27px,3.5vw,38px);max-width:17ch;color:var(--ink-strong)}
+  .cta-inner p{color:var(--muted);margin-top:10px}
+
+  footer{border-top:1px solid var(--line);background:var(--surface);padding:44px 0;font-size:14px;color:var(--muted)}
+  .fcols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
+  footer .brand{font-size:18px;margin-bottom:8px}
+  footer strong{color:var(--ink) !important}
+  .fnote{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  :focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-radius:4px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "AccèsFinance",
+  "url": "https://accesfinance.pro/",
+  "slogan": "On tient les comptes. Comptez sur nous.",
+  "description": "Comptabilité pour entrepreneurs au Québec, spécialisée CCQ et RBQ : tenue de livres, TPS/TVQ, paie et états financiers en temps réel, avec un vrai spécialiste dédié.",
+  "email": "contact@accesfinance.pro",
+  "image": "https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?w=1200&h=630&fit=crop&q=80&auto=format",
+  "inLanguage": "fr-CA",
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Québec, Canada"
+  },
+  "knowsLanguage": ["fr-CA"],
+  "serviceType": [
+    "Tenue de livres",
+    "Déclarations TPS/TVQ",
+    "Paie",
+    "États financiers"
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap"><nav>
+    <a class="brand" href="#"><span class="mark"></span>AccèsFinance</a>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#specialisation">Notre spécialité</a>
+      <a href="#rendezvous">Rendez-vous</a>
+      <a href="#espace-client">Espace client</a>
+      <a class="btn" href="#demarrage">Commencer</a>
+    </div>
+  </nav></div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hook">Débordé par le quotidien ?</span>
+      <h1>Conçu pour les entrepreneurs qui aiment gagner du temps</h1>
+      <p class="slogan">On tient les comptes. Comptez sur nous.</p>
+      <p class="lead">Livres à jour, taxes à temps, décisions claires — pendant que tu fais grandir ton entreprise.</p>
+      <p style="margin-top:6px;font-size:15px;color:var(--pine-2);font-weight:700">🏗️ Spécialistes de la construction et des gros chantiers — CCQ &amp; RBQ.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#demarrage">Réserver 20 minutes gratuites</a>
+        <a class="btn ghost" href="#services">Voir les services</a>
+      </div>
+      <div class="rowmini">
+        <span>✓ Réponse en <b>24 h</b></span>
+        <span>✓ TPS/TVQ à temps</span>
+        <span>✓ 100 % infonuagique</span>
+      </div>
+    </div>
+    <div class="hero-media" id="afCarousel">
+      <img class="af-slide active" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1100&q=80&auto=format&fit=crop" alt="Entrepreneur en construction">
+      <img class="af-slide" src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1100&q=80&auto=format&fit=crop" alt="Chef cuisinier en cuisine">
+      <img class="af-slide" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1100&q=80&auto=format&fit=crop" alt="Pâtissier au travail">
+      <img class="af-slide" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1100&q=80&auto=format&fit=crop" alt="Courtier immobilier">
+      <div class="af-cap" id="afCap">Construction · RBQ / CCQ</div>
+      <div class="badge"><div class="k">Temps récupéré / mois</div><div class="v mono">37 h <small>en moyenne</small></div></div>
+      <div class="af-dots" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <span><b>+230</b>&nbsp;remises TPS/TVQ produites</span>
+    <span>Note Google&nbsp;<b>4,9 ★</b></span>
+    <span>Réponse&nbsp;<b>&lt; 24 h</b></span>
+    <span>Zéro pénalité de retard&nbsp;<b>garanti</b></span>
+  </div>
+</div>
+
+<section class="blk" id="services">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Services</span>
+      <h2>Ce qu'on prend en charge</h2>
+      <p>Nous, on gère tout ça pour toi — comptabilité, taxes, stratégie et gestion. Du vrai monde, joignable, qui connaît ton dossier.</p>
+    </div>
+    <div class="cards reveal">
+      <div class="card"><div class="ic">▤</div><h3>Tenue de livres</h3><p>Conciliation bancaire, classement des dépenses et suivi de tes comptes, chaque mois — sans que tu touches à rien.</p></div>
+      <div class="card"><div class="ic">%</div><h3>TPS / TVQ</h3><p>Calcul et production de tes remises à temps. Fini les avis de Revenu Québec.</p></div>
+      <div class="card"><div class="ic">◷</div><h3>Paie</h3><p>Talons, remises DAS et relevés de fin d'année pour ton équipe.</p></div>
+      <div class="card"><div class="ic">▦</div><h3>États financiers</h3><p>Bilan et résultats clairs, prêts pour ta banque, ton prêteur ou ton fiscaliste.</p></div>
+      <div class="card"><div class="ic">◈</div><h3>Stratégie, économie &amp; gestion</h3><p>On gère tes chiffres et on bâtit des plans concrets pour payer moins d'impôt et réduire tes coûts — avant que la facture arrive.</p></div>
+      <div class="card"><div class="ic">↗</div><h3>Accompagnement</h3><p>Un point mensuel sur tes chiffres, en français clair, pour décider avec confiance.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk feat" id="comment">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Comment ça marche</span>
+      <h2>Géré par de vrais spécialistes.</h2>
+      <p>On branche tout — banque, facturation, dépenses — et notre équipe s'occupe du répétitif : reçus saisis, dépenses classées, taxes préparées, échéances suivies. Toi, tu gardes le contrôle ; ton spécialiste dédié fait le reste.</p>
+      <div class="pills">
+        <span class="pill">Reçus saisis pour toi</span>
+        <span class="pill">Dépenses classées</span>
+        <span class="pill">Rappels d'échéances</span>
+        <span class="pill">Rapports mensuels</span>
+      </div>
+      <div class="human">💬 <b>Envie de parler à quelqu'un ?</b> Une vraie personne dédiée, active et joignable, te répond — c'est elle qui tient tes comptes, pas un centre d'appel.</div>
+    </div>
+    <div class="media reveal"><img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1000&q=80&auto=format&fit=crop" alt="Tableau de bord financier clair et automatisé"></div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap split reveal">
+    <div class="media"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=80&auto=format&fit=crop" alt="Chiffres financiers clairs et lisibles"></div>
+    <div>
+      <span class="eyebrow">Clarté</span>
+      <h2 style="font-size:clamp(26px,3.4vw,38px);margin-top:12px">Les chiffres, ça nous parle.</h2>
+      <p style="color:var(--muted);margin-top:12px">Plus besoin de deviner où tu en es. Tu ouvres ton tableau de bord et tu vois exactement ce qui rentre, ce qui sort et ce qui reste.</p>
+      <ul>
+        <li>Solde net et flux de trésorerie en temps réel</li>
+        <li>Alertes avant chaque échéance de taxes</li>
+        <li>Stratégies chiffrées pour réduire tes coûts</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="blk who" id="qui">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Pour qui</span>
+      <h2>Pensé pour ceux qui bâtissent</h2>
+      <p>Pas de jargon, pas de gros cabinet distant. Une équipe qui te libère du temps.</p>
+    </div>
+    <div class="whorow reveal">
+      <div class="whocard"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop" alt="Travailleur autonome"><div class="t"><h3>Travailleurs autonomes</h3><p>Tu portes tous les chapeaux ? On te débarrasse de la comptabilité et de la gestion — on gère ensemble.</p></div></div>
+      <div class="whocard"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop" alt="PME en croissance"><div class="t"><h3>PME en croissance</h3><p>Tu grandis vite ? On met de l'ordre avant que le chaos te rattrape.</p></div></div>
+      <div class="whocard"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80&auto=format&fit=crop" alt="Commerce et e-commerce"><div class="t"><h3>Commerces &amp; e-commerce</h3><p>Ventes, taxes multi-provinces, stocks : on garde tout aligné.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="onb" id="demarrage">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Démarrage</span>
+      <h2>Réponds à 3 questions, on prépare ton plan</h2>
+      <p>Un mini-questionnaire, puis choisis ton moment. Ta première consultation de 20 minutes est gratuite et sans engagement.</p>
+    </div>
+    <form class="qform reveal" id="qform">
+      <div class="fld"><label for="q-name">Ton nom</label><input id="q-name" name="name" type="text" placeholder="Prénom et nom" required></div>
+      <div class="fld"><label for="q-type">Ton type d'entreprise</label>
+        <select id="q-type" name="type" required>
+          <option value="" selected disabled>Choisis…</option>
+          <option>Travailleur autonome</option>
+          <option>PME en croissance</option>
+          <option>Commerce / e-commerce</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="fld"><label for="q-need">Ton principal défi</label>
+        <select id="q-need" name="need" required>
+          <option value="" selected disabled>Choisis…</option>
+          <option>Retard dans mes livres</option>
+          <option>Stress des taxes (TPS/TVQ)</option>
+          <option>Paie de mon équipe</option>
+          <option>Y voir clair dans mes chiffres</option>
+          <option>Payer moins d'impôt</option>
+        </select>
+      </div>
+      <div class="fld"><label for="q-email">Ton courriel</label><input id="q-email" name="email" type="email" placeholder="toi@entreprise.ca" required></div>
+      <button class="btn" type="submit">Voir mes disponibilités →</button>
+      <p class="hint">Aucune carte requise · réponse en moins de 24 h</p>
+    </form>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <div class="media reveal"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80&auto=format&fit=crop" alt="Cliente satisfaite d'AccèsFinance"></div>
+    <div class="reveal">
+      <span class="eyebrow">Ils comptent sur nous</span>
+      <blockquote>«&nbsp;Je passais mes dimanches sur mes reçus. Maintenant je regarde un chiffre, et je sais exactement où j'en suis.&nbsp;»</blockquote>
+      <cite>— Propriétaire de PME, Québec</cite>
+    </div>
+  </div>
+</section>
+
+<!-- SPÉCIALISATION CCQ / RBQ + TEMPS RÉEL -->
+<section class="blk feat" id="specialisation">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Notre spécialité</span>
+      <h2>Bâtiment &amp; construction : CCQ et RBQ, on maîtrise.</h2>
+      <p>On connaît les réalités des entrepreneurs de la construction : rapports mensuels CCQ, cotisations, avantages sociaux, conformité RBQ, retenues et libérations. Vos chiffres sont tenus <b style="color:var(--pine-2)">à jour à la transaction près</b> — pas une fois par mois, en continu.</p>
+      <div class="pills">
+        <span class="pill">Rapports CCQ mensuels</span>
+        <span class="pill">Conformité RBQ</span>
+        <span class="pill">Avantages sociaux</span>
+        <span class="pill">Retenues &amp; libérations</span>
+        <span class="pill">Comptabilité en temps réel</span>
+      </div>
+      <div class="human">⚡ <b>À jour, en tout temps.</b> Chaque transaction est enregistrée dès qu'elle survient — vous voyez votre position réelle, pas un portrait d'il y a trois semaines.</div>
+    </div>
+    <div class="media reveal"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80&auto=format&fit=crop" alt="Chantier de construction, conformité CCQ RBQ"></div>
+  </div>
+</section>
+
+<!-- BUDGET (titre / explication au survol) + START-UP -->
+<section class="blk" id="budget">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Budget &amp; croissance</span>
+      <h2>On accompagne aussi les start-up</h2>
+      <p>De l'idée à la rentabilité — on structure vos chiffres à chaque étape.</p>
+    </div>
+    <div class="budg reveal">
+      <div class="budg-item" tabindex="0"><div class="bt">Budget prévisionnel</div><div class="be">On bâtit un budget réaliste et des scénarios chiffrés pour piloter votre première année sans mauvaise surprise.</div></div>
+      <div class="budg-item" tabindex="0"><div class="bt">Flux de trésorerie</div><div class="be">Suivi du cash en continu : ce qui rentre, ce qui sort, combien de mois de piste devant vous.</div></div>
+      <div class="budg-item" tabindex="0"><div class="bt">Financement &amp; subventions</div><div class="be">On prépare des états financiers prêts pour la banque, les investisseurs et les programmes d'aide.</div></div>
+      <div class="budg-item" tabindex="0"><div class="bt">Crédits R&amp;D / impôt</div><div class="be">On identifie les crédits (RS&amp;DE, e-business) et on structure vos dépenses pour payer moins d'impôt.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RENDEZ-VOUS / CALENDRIER -->
+<section class="blk feat" id="rendezvous">
+  <div class="wrap" style="grid-template-columns:1fr 1.15fr">
+    <div class="reveal">
+      <span class="eyebrow">Prendre rendez-vous</span>
+      <h2>Parlez à un spécialiste</h2>
+      <p>Choisissez un créneau — première consultation de 20 minutes, gratuite et sans engagement. Confirmation et rappels automatiques.</p>
+      <div class="human">🗓️ Pas de téléphone à composer : réservez en ligne, on vous rappelle au moment choisi.</div>
+    </div>
+    <div class="media reveal" style="aspect-ratio:auto">
+      <div id="afCalEmbed" style="min-height:520px;background:var(--surface-2);border:1px solid var(--line);border-radius:20px;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px 24px">
+        <div>
+          <div style="font-size:40px;margin-bottom:12px">🗓️</div>
+          <h3 style="margin-bottom:8px">Calendrier de réservation</h3>
+          <p style="color:var(--muted);max-width:38ch;margin:0 auto 18px">Le calendrier interactif se connecte à notre agenda. En attendant l'activation finale, réservez par courriel et on confirme le créneau.</p>
+          <a class="btn" href="mailto:contact@accesfinance.pro?subject=Demande%20de%20rendez-vous%2020%20min">Réserver un rendez-vous →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPACE CLIENT -->
+<section class="blk" id="espace-client">
+  <div class="wrap">
+    <div class="cta-inner" style="border-color:rgba(232,168,48,.25)">
+      <div>
+        <span class="eyebrow">Espace client sécurisé</span>
+        <h2 style="margin-top:10px">Vos dossiers, vos documents, en un seul endroit</h2>
+        <p>Connectez-vous à votre portail : suivi en temps réel, dépôt de documents, téléchargement de vos listes de clients et de vos rapports.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:220px">
+        <a class="btn" href="https://access.renoflow.online/web/login" target="_blank" rel="noopener" style="justify-content:center">Se connecter →</a>
+        <span style="font-size:12.5px;color:var(--muted);text-align:center">Accès sur invitation · connexion par courriel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap"><div class="cta-inner">
+    <div>
+      <h2>Reprends ton temps. On s'occupe des chiffres.</h2>
+      <p>Première consultation de 20 minutes, gratuite et sans engagement.</p>
+    </div>
+    <a class="btn" href="#demarrage">Commencer</a>
+  </div></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <div class="brand"><span class="mark" style="width:22px;height:22px"></span>AccèsFinance</div>
+        <p style="max-width:34ch">On tient les comptes. Comptez sur nous. Spécialistes CCQ &amp; RBQ.</p>
+      </div>
+      <div><strong style="color:var(--ink-strong)">Services</strong><br>Tenue de livres<br>TPS/TVQ · Paie<br>États financiers<br>Stratégie &amp; gestion</div>
+      <div><strong style="color:var(--ink-strong)">Contact</strong><br>contact@accesfinance.pro<br>Québec, QC<br>Lun–Ven · 9 h–17 h</div>
+      <div><strong style="color:var(--ink-strong)">Légal</strong><br><a href="confidentialite.html" style="color:inherit">Politique de confidentialité</a><br><span style="font-size:12.5px">Conforme Loi 25</span></div>
+    </div>
+    <div class="fnote"><span>© 2026 AccèsFinance · Tous droits réservés</span><span><a href="confidentialite.html" style="color:inherit">Confidentialité</a> · Nous respectons la Loi 25.</span></div>
+  </div>
+</footer>
+
+<a href="#rendezvous" aria-label="Prendre rendez-vous avec un spécialiste" style="position:fixed;right:20px;bottom:20px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#E8A830;color:#120C00;padding:14px 18px;border-radius:999px;box-shadow:0 12px 30px -8px rgba(232,168,48,.5);font-family:'Figtree',sans-serif;font-weight:700;font-size:15px;text-decoration:none">🗓️ Parler à un spécialiste</a>
+
+<script>
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  /* Hero carousel (métiers) */
+  (function(){
+    const slides=[...document.querySelectorAll('#afCarousel .af-slide')];
+    const caps=['Construction · RBQ / CCQ','Restauration · chef','Pâtisserie · commerce','Immobilier · courtage'];
+    const cap=document.getElementById('afCap');
+    const dotsWrap=document.querySelector('#afCarousel .af-dots');
+    if(!slides.length) return;
+    slides.forEach((_,i)=>{const d=document.createElement('span');if(i===0)d.className='on';dotsWrap.appendChild(d);});
+    const dots=[...dotsWrap.children];
+    let i=0;
+    setInterval(()=>{
+      slides[i].classList.remove('active');dots[i].classList.remove('on');
+      i=(i+1)%slides.length;
+      slides[i].classList.add('active');dots[i].classList.add('on');
+      if(cap)cap.textContent=caps[i];
+    },3800);
+  })();
+  /* Mini-questionnaire → ouvre la prise de rendez-vous (cal.com à brancher) */
+  document.getElementById('qform').addEventListener('submit',function(e){
+    e.preventDefault();
+    const p=new URLSearchParams({name:this.name.value,email:this.email.value,type:this.type.value,need:this.need.value});
+    /* Remplacer par ton lien cal.com : window.location='https://cal.com/<pseudo>/20min?'+p; */
+    window.location='mailto:contact@accesfinance.pro?subject='+encodeURIComponent('Consultation 20 min — '+this.name.value)+'&body='+encodeURIComponent('Type: '+this.type.value+'\nDéfi: '+this.need.value+'\nCourriel: '+this.email.value);
+  });
+</script>
+</body>
+</html>

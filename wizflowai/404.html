@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page introuvable — WizflowAI</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060c1a;
+  --bg2:#0d1528;
+  --blue:#2563eb;
+  --purple:#7c3aed;
+  --cyan:#06b6d4;
+  --ink:#f0f4ff;
+  --muted:#8ba3c7;
+  --line:rgba(255,255,255,.08);
+  --grad:linear-gradient(135deg,#2563eb 0%,#7c3aed 60%,#06b6d4 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Inter",system-ui,sans-serif;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 24px;
+  background-image:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(37,99,235,.18),transparent);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-.03em;
+  color:var(--ink);
+  margin-bottom:52px;
+  text-decoration:none;
+}
+.brand-icon{
+  width:30px;
+  height:30px;
+  border-radius:8px;
+  background:var(--grad);
+  flex:0 0 auto;
+  box-shadow:0 0 16px rgba(37,99,235,.5);
+}
+.code{
+  font-family:"JetBrains Mono",monospace;
+  font-size:clamp(80px,18vw,140px);
+  font-weight:400;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  line-height:1;
+  opacity:.22;
+  margin-bottom:-16px;
+}
+h1{
+  font-size:clamp(24px,5vw,38px);
+  font-weight:700;
+  letter-spacing:-.02em;
+  color:var(--ink);
+  margin-bottom:12px;
+}
+p{
+  color:var(--muted);
+  font-size:17px;
+  max-width:38ch;
+  margin:0 auto 36px;
+  line-height:1.6;
+}
+.actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--grad);
+  color:#fff;
+  font-weight:700;
+  padding:12px 26px;
+  border-radius:40px;
+  font-size:14.5px;
+  font-family:"Inter",sans-serif;
+  text-decoration:none;
+  transition:opacity .15s,transform .15s,box-shadow .15s;
+}
+.btn:hover{opacity:.88;transform:translateY(-1px);box-shadow:0 12px 32px -8px rgba(37,99,235,.5)}
+.btn.ghost{
+  background:transparent;
+  border:1.5px solid rgba(255,255,255,.12);
+  color:var(--muted);
+  font-weight:600;
+}
+.btn.ghost:hover{border-color:rgba(99,153,255,.45);color:var(--ink);opacity:1;transform:none;box-shadow:none}
+</style>
+</head>
+<body>
+<a class="brand" href="/"><div class="brand-icon"></div>WizflowAI</a>
+<div class="code">404</div>
+<h1>Cette page n'existe pas</h1>
+<p>Le lien est peut-être brisé ou la page a été déplacée. Retournez à l'accueil pour continuer.</p>
+<div class="actions">
+  <a class="btn" href="/">Retour à l'accueil</a>
+  <a class="btn ghost" href="#" onclick="history.back();return false">← Retour</a>
+</div>
+</body>
+</html>
